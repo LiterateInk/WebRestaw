@@ -1,21 +1,30 @@
-# WIP
+# WebRestaw - An awmazing API wrapper for [WebResto](https://www.web-resto.fr/)
 
-For now, this repository is only experiments around the API.
+> [!NOTE]  
+> This project is not affiliated with [IANORD](https://ianord.fr/) or WebResto in any way.
 
-## Usage
+WebResto is a software to manage access to catering facilities and/or establishment using badges.
+It also includes a web portal for consulting balances, online payment and direct booking by families themselves.
+[Click here](https://ianord.fr/Logiciel.awp?P1=WebResto) to learn more about WebResto on IANORD website.
 
-Please use the `pnpm` package manager to install the dependencies and run the scripts.
+**This package is a wrapper of the web portal** to interact with it programmatically.
+
+## Installation
+
+Use your favorite package manager to install [WebRestaw from NPM](https://www.npmjs.com/package/webrestaw).
 
 ```bash
-npm i -g pnpm # if you need to install pnpm
+# pnpm
+pnpm add webrestaw
 
-# install the dependencies
-pnpm install
+# Yarn
+yarn add webrestaw
 
-# run the main script in ./src/index.ts
-pnpm tsx ./src/index.ts
+# npm
+npm install webrestaw
 ```
 
 ## Credits
 
-- [Margouta](https://github.com/Margouta) for helping me to experiment with [WebResto](https://web-resto.fr/Webresto_V25)'s API.
+- Huge thanks to [Skythrew](https://github.com/Skythrew) for giving me his credentials to help me experiment with WebResto's internal API.
+- [IANORD](https://ianord.fr/) for their [WebResto](https://ianord.fr/Logiciel.awp?P1=WebResto) solution.
