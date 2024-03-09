@@ -59,6 +59,7 @@
   "devDependencies": {
     "@stylistic/eslint-plugin": "^1.6.3",
     "@types/node": "^20.11.25",
+    "@types/set-cookie-parser": "^2.4.7",
     "@typescript-eslint/parser": "^7.1.1",
     "eslint": "^8.57.0",
     "release-it": "^17.1.1",
@@ -66,5 +67,8 @@
     "tsup": "^8.0.2",
     "tsx": "^4.7.1",
     "typescript": "^5.4.2"
+  },
+  "dependencies": {
+    "set-cookie-parser": "^2.6.0"
   }
 }
