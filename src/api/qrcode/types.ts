@@ -1,10 +1,4 @@
-import type { WebRestoApiReq } from "~/utils/api";
+import type { WebRestoApiReqWithSession } from "~/utils/api";
 
-export interface WebRestoApiQrCodeReq extends WebRestoApiReq {
-  sessionID: string;
-  cookies: string[];
-}
-
-export interface WebRestoApiQrCodeRes {
-
-}
+export type WebRestoApiQrCodeReq = WebRestoApiReqWithSession;
+export type WebRestoApiQrCodeRes = ArrayBuffer;

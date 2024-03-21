@@ -1,3 +1,4 @@
+import type { WebRestoSession } from "~/constants/session";
 import type { WebRestoApiReq } from "~/utils/api";
 
 export interface WebRestoApiAuthReq extends WebRestoApiReq {
@@ -5,7 +6,4 @@ export interface WebRestoApiAuthReq extends WebRestoApiReq {
   password: string;
 }
 
-export interface WebRestoApiAuthRes {
-  sessionID: string;
-  cookies: string[];
-}
+export type WebRestoApiAuthRes = WebRestoSession;

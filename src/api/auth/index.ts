@@ -4,7 +4,7 @@ import { retrieveResponseCookies } from "~/utils/headers";
 import { findValueBetween } from "~/utils/finder";
 import { readRedirectionURL } from "~/webresto/wajax";
 
-export const connect = async (input: WebRestoApiAuthReq): Promise<WebRestoApiAuthRes> => {
+export const callWrApiAuth = async (input: WebRestoApiAuthReq): Promise<WebRestoApiAuthRes> => {
   const home = await input.fetcher(APP_ENDPOINT, { method: "GET" });
 
   // Read cookies from the response.
@@ -35,5 +35,5 @@ export const connect = async (input: WebRestoApiAuthReq): Promise<WebRestoApiAut
   const sessionID = redirectionURL.pathname.split("/").pop();
   if (!sessionID) throw new Error("Session ID not found.");
 
-  return { cookies, sessionID };
+  return { cookies, id: sessionID };
 };

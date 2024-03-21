@@ -1,10 +1,10 @@
 import { APP_ENDPOINT, createAuthenticatedEndpoint } from "~/webresto/constants";
-import type { WebRestoApiQrCodeReq, WebRestoApiQrCodeRes } from "./types";
+import type { WebRestoApiQrCodeReq } from "./types";
 import { readRedirectionURL } from "~/webresto/wajax";
 import { findValueBetween } from "~/utils/finder";
 
-export const qrCode = async (input: WebRestoApiQrCodeReq): Promise<ArrayBuffer> => {
-  const url = createAuthenticatedEndpoint(input.sessionID);
+export const callWrApiQrCode = async (input: WebRestoApiQrCodeReq): Promise<ArrayBuffer> => {
+  const url = createAuthenticatedEndpoint(input.session.id);
   const data = new URLSearchParams();
   data.set("WD_ACTION_", "AJAXPAGE");
   data.set("EXECUTE", "16");
@@ -15,7 +15,7 @@ export const qrCode = async (input: WebRestoApiQrCodeReq): Promise<ArrayBuffer> 
     body: data.toString(),
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
-      Cookie: input.cookies.join("; ")
+      Cookie: input.session.cookies.join("; ")
     }
   });
 
@@ -25,7 +25,7 @@ export const qrCode = async (input: WebRestoApiQrCodeReq): Promise<ArrayBuffer> 
   const qrCode = await input.fetcher(redirectionURL.href, {
     method: "GET",
     headers: {
-      Cookie: input.cookies.join("; ")
+      Cookie: input.session.cookies.join("; ")
     }
   });
 
@@ -39,7 +39,7 @@ export const qrCode = async (input: WebRestoApiQrCodeReq): Promise<ArrayBuffer> 
   const qrCodeImage = await input.fetcher(qrCodeImageURL, {
     method: "GET",
     headers: {
-      Cookie: input.cookies.join("; ")
+      Cookie: input.session.cookies.join("; ")
     }
   });
 
