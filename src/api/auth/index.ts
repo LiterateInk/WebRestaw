@@ -1,14 +1,19 @@
-import { APP_ENDPOINT } from "~/webresto/constants";
 import type { WebRestoApiAuthReq, WebRestoApiAuthRes } from "./types";
+
+import { APP_ENDPOINT } from "~/webresto/constants";
+import { readRedirectionURL } from "~/webresto/wajax";
+
 import { retrieveResponseCookies } from "~/utils/headers";
 import { findValueBetween } from "~/utils/finder";
-import { readRedirectionURL } from "~/webresto/wajax";
 
 export const callWrApiAuth = async (input: WebRestoApiAuthReq): Promise<WebRestoApiAuthRes> => {
   const home = await input.fetcher(APP_ENDPOINT, { method: "GET" });
+  if (home.status !== 200) {
+    if (home.status === 503) throw new Error("Service unavailable, this happens most of the time when you're rate-limited. You should wait and try again later.");
+    throw new Error("Failed to fetch the service for an unknown reason.");
+  }
 
-  // Read cookies from the response.
-  const cookies = retrieveResponseCookies(home.headers);
+  const sessionCookies = retrieveResponseCookies(home.headers);
 
   const homePlainHTML = await home.text();
   const actionAttributeValue = findValueBetween(homePlainHTML, "<form name=\"PAGE_LOGIN\" action=\"", "\"");
@@ -26,14 +31,20 @@ export const callWrApiAuth = async (input: WebRestoApiAuthReq): Promise<WebResto
     body: data.toString(),
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
-      Cookie: cookies.join("; ")
+      Cookie: sessionCookies.join("; ")
     }
   });
 
   const authPlainXML = await auth.text();
+
+  // Handle possible errors.
+  if (authPlainXML.includes("alert('Echec de l")) {
+    throw new Error("Login failed, happens most of the time when bad credentials were given.");
+  }
+
   const redirectionURL = readRedirectionURL(authPlainXML);
   const sessionID = redirectionURL.pathname.split("/").pop();
   if (!sessionID) throw new Error("Session ID not found.");
 
-  return { cookies, id: sessionID };
+  return { cookies: sessionCookies, id: sessionID };
 };
