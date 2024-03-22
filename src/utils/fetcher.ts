@@ -19,9 +19,9 @@ export type WebRestoFetcherHeaders = Record<string, string> | Headers;
  *   });
  *
  *   return {
+ *     status: response.status,
  *     headers: response.headers,
  *     text: () => response.text(),
- *     json: <T>() => response.json() as T,
  *     arrayBuffer: () => response.arrayBuffer()
  *   };
  * };
@@ -33,9 +33,9 @@ export type WebRestoFetcher = (url: string, options: {
   /** Body of the request, always as string. */
   body?: string
 }) => Promise<{
+  status: number
   headers: WebRestoFetcherHeaders
   text: () => Promise<string>
-  json: <T>() => Promise<T>
   arrayBuffer: () => Promise<ArrayBuffer>
 }>;
 
@@ -52,9 +52,9 @@ export const defaultWebRestoFetcher: WebRestoFetcher = async (url, options) => {
   });
 
   return {
+    status: response.status,
     headers: response.headers,
     text: () => response.text(),
-    json: <T>() => response.json() as T,
     arrayBuffer: () => response.arrayBuffer()
   };
 };

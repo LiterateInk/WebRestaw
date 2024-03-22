@@ -16,7 +16,8 @@
   "scripts": {
     "build": "tsup src/index.ts --dts --minify terser --clean --format cjs,esm --sourcemap",
     "release": "release-it",
-    "lint": "tsc && eslint ."
+    "lint": "tsc && eslint .",
+    "test": "bun test"
   },
   "files": [
     "dist"
@@ -57,6 +58,7 @@
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^1.7.0",
+    "@types/bun": "^1.0.10",
     "@types/node": "^20.11.30",
     "@types/set-cookie-parser": "^2.4.7",
     "@typescript-eslint/parser": "^7.3.1",

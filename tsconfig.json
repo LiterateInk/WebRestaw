@@ -6,7 +6,8 @@
 
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./src/*"]
+      "~/*": ["./src/*"],
+      "@webrestaw/mock": ["./mock/index.ts"],
     },
     
     "strict": true,
@@ -19,6 +20,6 @@
     "forceConsistentCasingInFileNames": true
   },
   
-  "include": ["src", "demos", "eslint.config.js"],
+  "include": ["src", "eslint.config.js"],
   "exclude": ["node_modules", "dist"]
 }
