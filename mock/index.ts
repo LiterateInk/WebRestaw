@@ -15,6 +15,9 @@ export const wajaxErrorHandler = (message: string) => async () => `<?xml version
 export const LOGIN_SESSION_ID = "2AMAAAAAAAAKAA";
 export const LOGIN_SECURITY_COOKIE = { DYN_SECURITE6969: "BF9A8270057624FD2AD0" };
 
+export const USER_NAME = "John Doe";
+export const USER_QR_ID = "42069666";
+
 export class FetcherMockError extends Error {
   public constructor (message: string) {
     super(message);
