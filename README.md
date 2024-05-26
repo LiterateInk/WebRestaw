@@ -1,9 +1,14 @@
-# WebRestaw - An awmazing API wrapper for [WebResto](https://www.web-resto.fr/)
+<p align="center">
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://github.com/LiterateInk/WebRestaw/blob/2873142db3cc3554a15f479af6dc31b500cd656b/.github/WebRestaw%20Dark.png">
+        <img alt="WebRestaw Logo" src="https://github.com/LiterateInk/WebRestaw/blob/2873142db3cc3554a15f479af6dc31b500cd656b/.github/WebRestaw%20Light.png">
+    </picture>
+</p>
 
 > [!NOTE]  
 > This project is not affiliated with [IANORD](https://ianord.fr/) or WebResto in any way.
 
-WebResto is a software to manage access to catering facilities and/or establishment using badges.
+[WebResto](https://www.web-resto.fr/) is a software to manage access to catering facilities and/or establishment using badges.
 It also includes a web portal for consulting balances, online payment and direct booking by families themselves.
 [Click here](https://ianord.fr/Logiciel.awp?P1=WebResto) to learn more about WebResto on IANORD website.
 
@@ -23,6 +28,10 @@ yarn add webrestaw
 # npm
 npm install webrestaw
 ```
+
+## Get help
+
+Join [LiterateInk's Discord server](https://discord.gg/f5KNCnMWzB) to talk about WebRestaw, get help and be notified about the latest updates !
 
 ## Credits
 
