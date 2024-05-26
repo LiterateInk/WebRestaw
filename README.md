@@ -7,7 +7,7 @@
 
 [WebResto](https://www.web-resto.fr/) is a software to manage access to catering facilities and/or establishment using badges.
 It also includes a web portal for consulting balances, online payment and direct booking by families themselves.
- to learn more about WebResto on IANORD website.
+
 WebRestaw is a simple wrapper around [WebResto](https://ianord.fr/logiciel/webresto-2/) internal API.
 
 > [!NOTE]  
