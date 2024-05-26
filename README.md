@@ -33,6 +33,10 @@ npm install webrestaw
 
 Join [LiterateInk's Discord server](https://discord.gg/f5KNCnMWzB) to talk about WebRestaw, get help and be notified about the latest updates !
 
+## License
+
+This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) file for details.
+
 ## Credits
 
 - Huge thanks to [Skythrew](https://github.com/Skythrew) for giving me his credentials to help me experiment with WebResto's internal API.
