@@ -5,14 +5,13 @@
     </picture>
 </p>
 
-> [!NOTE]  
-> This project is not affiliated with [IANORD](https://ianord.fr/) or WebResto in any way.
-
 [WebResto](https://www.web-resto.fr/) is a software to manage access to catering facilities and/or establishment using badges.
 It also includes a web portal for consulting balances, online payment and direct booking by families themselves.
-[Click here](https://ianord.fr/Logiciel.awp?P1=WebResto) to learn more about WebResto on IANORD website.
+ to learn more about WebResto on IANORD website.
+WebRestaw is a simple wrapper around [WebResto](https://ianord.fr/logiciel/webresto-2/) internal API.
 
-**This package is a wrapper of the web portal** to interact with it programmatically.
+> [!NOTE]  
+> This project is not affiliated with [IANORD](https://ianord.fr/) or WebResto in any way.
 
 ## Installation
 
