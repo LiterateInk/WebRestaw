@@ -1,6 +1,6 @@
 <p align="center">
   <picture>
-    <img alt="WebResto Banner" src="">
+    <img alt="WebResto Banner" src="https://github.com/LiterateInk/WebRestaw/blob/dce54bcf0e3b6759c0294539e8888229eb3e0ca6/.github/assets/readme.svg">
   </picture>
 </p>
 
