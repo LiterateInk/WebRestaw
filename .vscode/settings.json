@@ -5,13 +5,14 @@
 
   "cSpell.language": "en,fr",
 
-  "eslint.experimental.useFlatConfig": true,
+  "eslint.useFlatConfig": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
 
   "markdownlint.config": {
     "$schema": "https://raw.githubusercontent.com/DavidAnson/markdownlint/main/schema/markdownlint-config-schema.json",
-    "no-inline-html": false
+    "MD041": false,
+    "MD033": false
   }
 }

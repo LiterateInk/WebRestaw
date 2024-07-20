@@ -1,8 +1,4 @@
-<p align="center">
-  <picture>
-    <img alt="WebResto Banner" src="https://github.com/LiterateInk/WebRestaw/blob/dce54bcf0e3b6759c0294539e8888229eb3e0ca6/.github/assets/readme.svg">
-  </picture>
-</p>
+![WebRestaw Banner](.github/assets/banner.svg)
 
 [WebResto](https://www.web-resto.fr/) is a software to manage access to catering facilities and/or establishment using badges.
 It also includes a web portal for consulting balances, online payment and direct booking by families themselves.
